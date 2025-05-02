@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Widget Demo</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #f9f9f9;
+        }
+        
+        .demo-content {
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            color: #555;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            line-height: 1.6;
+            max-width: 800px;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .demo-content {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .demo-content {
+                padding: 1rem;
+                width: 95%;
+            }
+        }
+        
+        /* 4K and large screens */
+        @media (min-width: 2560px) {
+            .demo-content {
+                max-width: 2000px;
+            }
+            
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            p {
+                font-size: 1.5rem;
+                max-width: 1200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-content">
+        <h1>Chat Widget Demo</h1>
+        <p>This is a demo page with the embedded chat widget. Click on the chat icon in the bottom right corner to start.</p>
+    </div>
+    
+    <!-- Load environment variables first -->
+    <script src="/env.js"></script>
+    <!-- Initialize the chat widget -->
+    <script src="/chat-widget.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initChatWidget({
+                geminiApiKey: window.ENV.GEMINI_API_KEY, 
+                supabaseUrl: window.ENV.SUPABASE_URL,
+                supabaseKey: window.ENV.SUPABASE_SERVICE_KEY,
+                socketIoUrl: 'http://localhost:' + window.ENV.PORT,
+                widgetTitle: 'AI Assistant',
+                widgetSubtitle: 'Ask me anything!',
+                primaryColor: '#7857fe'
+            });
+        });
+    </script>
+</body>
+</html>
