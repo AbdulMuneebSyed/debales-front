@@ -20,7 +20,7 @@ function initChatWidget(config) {
     supabaseKey:
       config.supabaseKey ||
       "",
-    socketIoUrl: config.socketIoUrl || "http://localhost:3000",
+    socketIoUrl: config.socketIoUrl || "https://debaleschatbotdemo.onrender.com",
     widgetTitle: config.widgetTitle || "Chat Assistant",
     widgetSubtitle: config.widgetSubtitle || "How can I help you today?",
     primaryColor: config.primaryColor || "#7857fe",
