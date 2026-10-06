@@ -80,9 +80,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             initChatWidget({
-                geminiApiKey: window.ENV.GEMINI_API_KEY, 
                 supabaseUrl: window.ENV.SUPABASE_URL,
-                supabaseKey: window.ENV.SUPABASE_SERVICE_KEY,
+                supabaseKey: window.ENV.SUPABASE_ANON_KEY,
                 socketIoUrl: 'https://debaleschatbotdemo.onrender.com',
                 widgetTitle: 'AI Assistant',
                 widgetSubtitle: 'Ask me anything!',

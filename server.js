@@ -24,7 +24,7 @@ const server = http.createServer(app);
 // Create Socket.IO server
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: (process.env.ALLOWED_ORIGINS || "http://localhost:3000").split(","),
     methods: ["GET", "POST"],
   },
 });
